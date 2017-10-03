@@ -1,15 +1,14 @@
 import javax.swing.JOptionPane;
 public class RecursiveWords {
 	
-	public String reverseWord(String s){
-			
+	public String reverseWord(String s){	
 		String rev = "";
 			
-		if(s.length() <= 1){
+		if(s.length() <= 1 || s==null){
 			return s;		
 		}
 		else{
-			rev += s.charAt(s.length()-1) + reverseWord(s.substring(0, s.length()-1));
+			rev = rev + s.charAt(s.length()-1) + reverseWord(s.substring(0, s.length()-1));
 			return rev;
 		}
 	}	
@@ -19,7 +18,7 @@ public class RecursiveWords {
 	RecursiveWords words = new RecursiveWords();
 		boolean condition = true;
 		while(condition){
-				String word = JOptionPane.showInputDialog("Please enter a word you would like reversed or enter done to exit. :) ");
+				String word = JOptionPane.showInputDialog("Please enter a word you want reversed or enter done to exit. :) ");
 				if(word.equals("done")){
 					condition = false;
 					System.out.println("System Exiting. Have a nice day! :)");
